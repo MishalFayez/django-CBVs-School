@@ -1,0 +1,17 @@
+{% extends 'basic_app/basic_app_base.html' %} {% block content %}
+
+<h1>
+    {% if not form.instance.pk %}
+        create school
+    {% else %}
+        Update school
+    {% endif %}
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+
+{% endblock content %}
